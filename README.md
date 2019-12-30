@@ -6,8 +6,10 @@ The intent of creating this is to reduce the number of times one has to google "
 # Installation
 
 ```bash
-curl https://raw.github.com/checktheroads/pem-to-pfx/master/pem-to-pfx.sh | bash
+curl -s https://raw.githubusercontent.com/checktheroads/pem-to-pfx/master/install.sh | bash
 ```
+
+...and then probably log out & back in, or run `source ~/.bashrc` or `source ~/.zshrc` as the case may be.
 
 # Usage
 

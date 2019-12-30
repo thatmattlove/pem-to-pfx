@@ -18,7 +18,7 @@
 #
 
 # Variable defaults
-PEM_TO_PFX="https://raw.github.com/checktheroads/pem-to-pfx/master/pem-to-pfx.sh"
+PEM_TO_PFX="https://raw.githubusercontent.com/checktheroads/pem-to-pfx/master/pem-to-pfx.sh"
 COMMAND_NAME="pem-to-pfx"
 DEST_PATH="/usr/local/bin/"
 COMMAND_PATH="$DEST_PATH$COMMAND_NAME"
@@ -67,6 +67,7 @@ function download () {
     if [ $? -eq 1 ]; then
         dl_error
     else
+        chmod +x $COMMAND_PATH
         dl_success
     fi
 }
