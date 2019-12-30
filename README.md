@@ -1,16 +1,41 @@
-# PFX to PEM
-This is an extremely simple bash script that ingests a PFX bundle and spits out individual PEM files of the contained:
+# PEM to PFX
+This is an extremely simple bash script that ingests a certificate, private key, CA bundle, and password, and spits out a PFX bundle:
 
-- Certificate
-- Unencrypted Private Key
-- CA chain (intermediate & root)
-- Private key password
-
-The intent of creating this is to reduce the number of times one has to google "openssl convert pfx to pem" and dick around with `openssl` until you get exactly what you need. Any by 'you', I mean me.
+The intent of creating this is to reduce the number of times one has to google "openssl convert pem to pfx" and dick around with `openssl` until you get exactly what you need. Any by 'you', I mean me.
 
 # Installation
 
+```bash
+curl https://raw.github.com/checktheroads/pem-to-pfx/master/pem-to-pfx.sh | bash
+```
+
 # Usage
+
+## Options
+```bash
+Convert PEM bundle to PFX/PCKS12
+
+    -h      Show this help menu.
+    -c      Cert file name.
+    -k      Key file name.
+    -a      CA bundle file name.
+    -o      Destination PFX file name.
+    -p      Import/Export password.
+    -f      Import/Export password file name. [OPTIONAL - default is current working directory]
+    -d      Show debug output ⚠️  THIS WILL SHOW PASSWORDS ⚠️
+
+```
+
+## Conversion
+
+```bash
+pem-to-pfx \
+    -c <path to cert file> \
+    -k <path to key file> \
+    -a <path to CA bundle file> \
+    -o <path to new PFX file> \
+    -p <private key password>
+```
 
 # License
 <a href="http://www.wtfpl.net/"><img
